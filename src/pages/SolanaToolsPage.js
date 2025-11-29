@@ -1,93 +1,248 @@
 import React from "react";
+import { motion } from "framer-motion";
 import "../ModernPages.css";
 
 function SolanaToolsPage() {
   return (
-    <div className="page-container">
-      <div className="section">
-        <h2 className="section-title">Solana Trading Tools Suite</h2>
-        
-        <section className="section-content">
-          <h3 className="section-subtitle">Overview</h3>
-          <p>
+    <motion.div
+      className="page-container"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.8 }}
+    >
+      <motion.div
+        className="section"
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.2, duration: 0.8, ease: "easeOut" }}
+      >
+        <motion.h2
+          className="section-title"
+          initial={{ opacity: 0, x: -30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.4, duration: 0.6 }}
+        >
+          Solana Trading Tools Suite
+        </motion.h2>
+
+        <motion.section
+          className="section-content"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.6, duration: 0.6 }}
+        >
+          <motion.h3
+            className="section-subtitle"
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.8, duration: 0.5 }}
+          >
+            Overview
+          </motion.h3>
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1.0, duration: 0.5 }}
+          >
             This suite leverages the Solana blockchain for algorithmic trading and portfolio management. The main focus is the
             Solana Trading Bot—an end-to-end system that automates data ingestion, strategy execution, and risk management.
-          </p>
-        </section>
-        
-        <section className="section-content">
-          <h3 className="section-subtitle">Projects</h3>
-          <ul>
-            <li>
-              <a 
-                href="https://github.com/jadenfix/solanatools/tree/main/solana-bot" 
-                target="_blank" 
-                rel="noopener noreferrer">
+          </motion.p>
+        </motion.section>
+
+        <motion.section
+          className="section-content"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1.2, duration: 0.6 }}
+        >
+          <motion.h3
+            className="section-subtitle"
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1.4, duration: 0.5 }}
+          >
+            Projects
+          </motion.h3>
+          <motion.ul
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1.6, duration: 0.6 }}
+          >
+            <motion.li
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 1.7, duration: 0.4 }}
+            >
+              <motion.a
+                href="https://github.com/matteoshafer/solanatools/tree/main/solana-bot"
+                target="_blank"
+                rel="noopener noreferrer"
+                initial={{ opacity: 0.7 }}
+                whileHover={{ opacity: 1, scale: 1.05 }}
+                transition={{ duration: 0.2 }}
+              >
                 ⚡ Solana Trading Bot
-              </a>{" "}
+              </motion.a>{" "}
               – Automated trading with real–time data and robust risk management.
-            </li>
-            <li>
-              <a 
-                href="https://github.com/jadenfix/solanatools/blob/main/backteststrats.ipynb" 
-                target="_blank" 
-                rel="noopener noreferrer">
+            </motion.li>
+            <motion.li
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 1.8, duration: 0.4 }}
+            >
+              <motion.a
+                href="https://github.com/matteoshafer/solanatools/blob/main/backteststrats.ipynb"
+                target="_blank"
+                rel="noopener noreferrer"
+                initial={{ opacity: 0.7 }}
+                whileHover={{ opacity: 1, scale: 1.05 }}
+                transition={{ duration: 0.2 }}
+              >
                 🧪 Strategy Backtesting Framework
-              </a>{" "}
+              </motion.a>{" "}
               – Quantitative analysis using RSI momentum and more.
-            </li>
-            <li>
+            </motion.li>
+            <motion.li
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 1.9, duration: 0.4 }}
+            >
               <strong>Portfolio Tracker:</strong> A multi–wallet monitoring tool featuring:
-              <ul>
-                <li>Real–time balance tracking via Solana RPC</li>
-                <li>ML–driven risk prediction</li>
-                <li>Historical performance simulation</li>
-                <li>Dockerized deployment</li>
-              </ul>
-            </li>
-            <li>
+              <motion.ul
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 2.0, duration: 0.5 }}
+              >
+                <motion.li
+                  initial={{ opacity: 0, x: -15 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 2.1, duration: 0.3 }}
+                >
+                  Real–time balance tracking via Solana RPC
+                </motion.li>
+                <motion.li
+                  initial={{ opacity: 0, x: -15 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 2.2, duration: 0.3 }}
+                >
+                  ML–driven risk prediction
+                </motion.li>
+                <motion.li
+                  initial={{ opacity: 0, x: -15 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 2.3, duration: 0.3 }}
+                >
+                  Historical performance simulation
+                </motion.li>
+                <motion.li
+                  initial={{ opacity: 0, x: -15 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 2.4, duration: 0.3 }}
+                >
+                  Dockerized deployment
+                </motion.li>
+              </motion.ul>
+            </motion.li>
+            <motion.li
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 2.5, duration: 0.4 }}
+            >
               <strong>Trading Platform:</strong> Institutional–grade features including OMS, data aggregation, model tracking, and analytics.
-            </li>
-          </ul>
-        </section>
-        
-        <section className="section-content">
-          <h3 className="section-subtitle">Project Structure</h3>
-          <pre>{`
+            </motion.li>
+          </motion.ul>
+        </motion.section>
+
+        <motion.section
+          className="section-content"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 2.7, duration: 0.6 }}
+        >
+          <motion.h3
+            className="section-subtitle"
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 2.9, duration: 0.5 }}
+          >
+            Project Structure
+          </motion.h3>
+          <motion.pre
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 3.1, duration: 0.6 }}
+          >{`
 solanatools/
 ├── solana-bot/            # Main Trading Bot project
 ├── backteststrats.ipynb   # Strategy Backtesting Notebook
 ├── solana_portfolio/      # Portfolio Tracker
 └── solana_trading_platform/  # Institutional-grade trading infrastructure
-          `}</pre>
-        </section>
-        
-        <section className="section-content">
-          <h3 className="section-subtitle">Installation & Setup</h3>
-          <ol>
-            <li>
-              Clone the repository: <code>git clone https://github.com/jadenfix/solanatools.git</code>
-            </li>
-            <li>
+          `}</motion.pre>
+        </motion.section>
+
+        <motion.section
+          className="section-content"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 3.3, duration: 0.6 }}
+        >
+          <motion.h3
+            className="section-subtitle"
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 3.5, duration: 0.5 }}
+          >
+            Installation & Setup
+          </motion.h3>
+          <motion.ol
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 3.7, duration: 0.6 }}
+          >
+            <motion.li
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 3.8, duration: 0.4 }}
+            >
+              Clone the repository: <code>git clone https://github.com/matteoshafer/solanatools.git</code>
+            </motion.li>
+            <motion.li
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 3.9, duration: 0.4 }}
+            >
               Install dependencies: <code>pip install -r requirements.txt</code>
-            </li>
-            <li>
+            </motion.li>
+            <motion.li
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 4.0, duration: 0.4 }}
+            >
               Copy <code>.env.example</code> to <code>.env</code> to configure your environment.
-            </li>
-          </ol>
-        </section>
-        
-        <p className="section-content">
+            </motion.li>
+          </motion.ol>
+        </motion.section>
+
+        <motion.p
+          className="section-content"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 4.2, duration: 0.6 }}
+        >
           For more details, please visit the repository:{" "}
-          <a 
-            href="https://github.com/jadenfix/solanatools" 
-            target="_blank" 
-            rel="noopener noreferrer">
+          <motion.a
+            href="https://github.com/matteoshafer/solanatools"
+            target="_blank"
+            rel="noopener noreferrer"
+            initial={{ opacity: 0.7 }}
+            whileHover={{ opacity: 1, scale: 1.05 }}
+            transition={{ duration: 0.2 }}
+          >
             Solana Trading Tools on GitHub
-          </a>
-        </p>
-      </div>
-    </div>
+          </motion.a>
+        </motion.p>
+      </motion.div>
+    </motion.div>
   );
 }
 

@@ -1,78 +1,120 @@
-import React from "react";
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-import { motion } from "framer-motion";
-import { FaGithub, FaLinkedin, FaEnvelope, FaCalendarAlt } from "react-icons/fa";
-
+import React, { useState, useEffect } from "react";
+import { BrowserRouter, Routes, Route, Link, useLocation } from "react-router-dom";
+import { motion, AnimatePresence } from "framer-motion";
+import { FaGithub, FaBars, FaTimes } from "react-icons/fa";
 import HomePage from "./pages/HomePage";
-import MastersThesisPage from "./pages/MastersThesisPage";
-import PredictiveStochasticPage from "./pages/PredictiveStochasticPage";
-import SolanaToolsPage from "./pages/SolanaToolsPage";
-import NLPPage from "./pages/NLPPage";
-import BayesianCNNPage from "./pages/BayesianCNNPage";
 import "./App.css";
 
+function ScrollToTop() {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  return null;
+}
+
 function Header() {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+    setIsMobileMenuOpen(false);
+  };
+
   return (
-    <header className="header">
-      <motion.div 
-        className="logo"
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-      >
-        <img
-          src="https://avatars.githubusercontent.com/u/163031992?v=4"
-          alt="Jaden Fix Avatar"
-          className="avatar"
-        />
-        <h1>Jaden Fix</h1>
-        <h2>Data, AI, and Solutions Specialist</h2>
-      </motion.div>
-      <div className="profile-links">
-        <a href="https://github.com/jadenfix" target="_blank" rel="noopener noreferrer" title="GitHub">
-          <FaGithub className="profile-icon" />
-        </a>
-        <a href="https://linkedin.com/in/jadenfix/" target="_blank" rel="noopener noreferrer" title="LinkedIn">
-          <FaLinkedin className="profile-icon" />
-        </a>
-        <a href="mailto:jpfix@calpoly.edu" title="Email">
-          <FaEnvelope className="profile-icon" />
-        </a>
-        <a href="https://calendly.com/jadenfix" target="_blank" rel="noopener noreferrer" title="Schedule a Meeting">
-          <FaCalendarAlt className="profile-icon" />
-        </a>
+    <motion.header 
+      className={`header ${isScrolled ? "scrolled" : ""}`}
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
+    >
+      <div className="header-container">
+        <Link to="/" className="logo">
+          <span className="logo-text">MS</span>
+          <span className="logo-name">Matteo Shafer</span>
+        </Link>
+
+        <nav className={`nav ${isMobileMenuOpen ? "mobile-open" : ""}`}>
+          <Link to="/" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>
+            Home
+          </Link>
+          <button 
+            className="nav-link nav-button" 
+            onClick={() => scrollToSection("projects")}
+          >
+            Projects
+          </button>
+          <button 
+            className="nav-link nav-button" 
+            onClick={() => scrollToSection("about")}
+          >
+            About
+          </button>
+          <button 
+            className="nav-link nav-button" 
+            onClick={() => scrollToSection("contact")}
+          >
+            Contact
+          </button>
+          <a 
+            href="https://github.com/matteoshafer" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="nav-github"
+          >
+            <FaGithub />
+          </a>
+        </nav>
+
+        <button 
+          className="mobile-menu-btn"
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          aria-label="Toggle menu"
+        >
+          {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
+        </button>
       </div>
-      <nav className="navbar">
-        <ul className="menu">
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/masters-thesis">Masters Thesis</Link></li>
-          <li><Link to="/predictive-stochastic">Predictive Stochastic</Link></li>
-          <li><Link to="/solana-tools">Solana Tools</Link></li>
-          <li><Link to="/nlp">NLP</Link></li>
-          <li><Link to="/bayesian-cnn">Bayesian CNN</Link></li>
-        </ul>
-      </nav>
-    </header>
+    </motion.header>
   );
 }
 
 function App() {
   return (
     <BrowserRouter>
-      <div className="app-container">
+      <ScrollToTop />
+      <div className="app">
         <Header />
-        <main className="content">
+        <AnimatePresence mode="wait">
           <Routes>
             <Route path="/" element={<HomePage />} />
-            <Route path="/masters-thesis" element={<MastersThesisPage />} />
-            <Route path="/predictive-stochastic" element={<PredictiveStochasticPage />} />
-            <Route path="/solana-tools" element={<SolanaToolsPage />} />
-            <Route path="/nlp" element={<NLPPage />} />
-            <Route path="/bayesian-cnn" element={<BayesianCNNPage />} />
+            <Route path="*" element={<HomePage />} />
           </Routes>
-        </main>
+        </AnimatePresence>
         <footer className="footer">
-          <p>&copy; {new Date().getFullYear()} Jaden Fix. All rights reserved.</p>
+          <div className="footer-content">
+            <p>&copy; {new Date().getFullYear()} Matteo Shafer. All rights reserved.</p>
+            <div className="footer-links">
+              <a 
+                href="https://github.com/matteoshafer" 
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                <FaGithub />
+              </a>
+            </div>
+          </div>
         </footer>
       </div>
     </BrowserRouter>
