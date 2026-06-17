@@ -87,6 +87,14 @@ body {
   color: var(--bg-primary);
 }
 
+.logo-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--accent-primary);
+}
+
 .logo-name {
   font-weight: 600;
   font-size: 1.125rem;

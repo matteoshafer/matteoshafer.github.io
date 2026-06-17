@@ -48,6 +48,15 @@ function HomePage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
+          <motion.img
+            src="/headshot.png"
+            alt="Matteo Shafer"
+            className="hero-headshot"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.1, duration: 0.6 }}
+          />
+
           <motion.div
             className="hero-badge"
             initial={{ opacity: 0, scale: 0.8 }}
@@ -216,6 +225,61 @@ function HomePage() {
             <span className="skill-tag">Stochastic Modeling</span>
             <span className="skill-tag">Blockchain</span>
             <span className="skill-tag">Data Visualization</span>
+          </div>
+        </motion.div>
+      </section>
+
+      {/* Reviews Section */}
+      <section id="reviews" className="reviews-section">
+        <motion.div
+          className="reviews-content"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <h2 className="section-title">Tutoring &amp; Coaching Reviews</h2>
+          <p className="section-subtitle">What students and families are saying — via Nextdoor</p>
+          <div className="reviews-grid">
+            {[
+              {
+                name: "Esther A.",
+                location: "La Jolla Heights",
+                text: "Matteo is a wonderful tutor. Extremely helpful and really skilled at explaining high school math. I highly recommend hiring Matteo."
+              },
+              {
+                name: "Elizabeth L.",
+                location: "Carmel Valley Circle",
+                text: "Matteo helped my daughter go from a state of anxiety to excelling in the midterm exam of her college statistics class. He is patient and very helpful. I strongly recommend him if your child needs help."
+              },
+              {
+                name: "Lisa Taylor",
+                location: "North Clairemont Drive",
+                text: "We are on our third session with Matteo and very happy! My son finds him \"very chill\" and easy to work with. This says a lot coming from a 14 year old. After his first session my son got a B on his make up exam. Looking forward to seeing more results! He has the patience and knowledge to take the time to explain the work until my son can understand. We highly recommend."
+              }
+            ].map((review, i) => (
+              <motion.div
+                key={i}
+                className="review-card"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: i * 0.1 }}
+              >
+                <div className="card-glow" />
+                <div className="review-card-content">
+                  <div className="review-header">
+                    <div className="review-avatar">{review.name[0]}</div>
+                    <div>
+                      <div className="review-name">{review.name}</div>
+                      <div className="review-location">{review.location}</div>
+                    </div>
+                  </div>
+                  <p className="review-text">{review.text}</p>
+                  <div className="review-stars">{"★★★★★"}</div>
+                </div>
+              </motion.div>
+            ))}
           </div>
         </motion.div>
       </section>

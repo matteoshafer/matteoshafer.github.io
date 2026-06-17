@@ -385,20 +385,135 @@
   .hero-subtitle {
     font-size: 1.25rem;
   }
-  
+
   .stats-grid {
     gap: 1.5rem;
   }
-  
+
   .stat-card {
     padding: 1.25rem 2rem;
   }
-  
+
   .projects-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .section-title {
     font-size: 2rem;
   }
+
+  .reviews-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Headshot */
+.hero-headshot {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid rgba(99, 179, 237, 0.4);
+  box-shadow: 0 0 30px rgba(99, 179, 237, 0.2);
+  margin-bottom: 1.5rem;
+}
+
+/* Reviews Section */
+.reviews-section {
+  background: #0d1117;
+  padding: 6rem 2rem;
+}
+
+.reviews-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 3rem;
+  text-align: left;
+}
+
+.review-card {
+  background: rgba(20, 30, 48, 0.8);
+  border: 1px solid rgba(99, 179, 237, 0.15);
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.review-card:hover {
+  border-color: rgba(99, 179, 237, 0.4);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.review-card .card-glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #63b3ed, #4fd1c5, transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.review-card:hover .card-glow {
+  opacity: 1;
+}
+
+.review-card-content {
+  padding: 1.5rem;
+}
+
+.review-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.review-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #63b3ed, #4fd1c5);
+  color: #0d1117;
+  font-weight: 700;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.review-name {
+  color: #f7fafc;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.review-location {
+  color: #718096;
+  font-size: 0.8rem;
+  margin-top: 0.1rem;
+}
+
+.review-text {
+  color: #a0aec0;
+  font-size: 0.9rem;
+  line-height: 1.7;
+  margin: 0 0 1rem;
+}
+
+.review-stars {
+  color: #4fd1c5;
+  font-size: 0.85rem;
+  display: flex;
+  gap: 0.2rem;
 }

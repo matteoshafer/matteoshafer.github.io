@@ -42,7 +42,7 @@ function Header() {
     >
       <div className="header-container">
         <Link to="/" className="logo">
-          <span className="logo-text">MS</span>
+          <img src="/headshot.png" alt="Matteo Shafer" className="logo-avatar" />
           <span className="logo-name">Matteo Shafer</span>
         </Link>
 
@@ -62,8 +62,14 @@ function Header() {
           >
             About
           </button>
-          <button 
-            className="nav-link nav-button" 
+          <button
+            className="nav-link nav-button"
+            onClick={() => scrollToSection("reviews")}
+          >
+            Reviews
+          </button>
+          <button
+            className="nav-link nav-button"
             onClick={() => scrollToSection("contact")}
           >
             Contact
