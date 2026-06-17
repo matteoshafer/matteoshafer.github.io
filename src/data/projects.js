@@ -158,6 +158,26 @@ export const projects = [
     language: "Java",
     github: "https://github.com/matteoshafer/Humer",
     featured: false
+  },
+
+  // Sports & Quant
+  {
+    id: 18,
+    name: "World Cup 2026 Betting Model",
+    description: "Dixon-Coles Poisson regression model for the 2026 FIFA World Cup — generates match probabilities, over/under and BTTS predictions, and identifies value bets via quarter-Kelly staking",
+    category: "trading",
+    language: "Python",
+    github: "https://github.com/matteoshafer/worldcup-betting-model",
+    featured: true
+  },
+  {
+    id: 19,
+    name: "Job Application Agent",
+    description: "Automated job-application scraper that parses postings from any URL and logs structured data to Google Sheets via the Sheets API",
+    category: "software-dev",
+    language: "Python",
+    github: "https://github.com/matteoshafer/job-agent",
+    featured: false
   }
 ];
 
@@ -170,7 +190,7 @@ export const categories = [
 ];
 
 export const stats = {
-  repositories: 17,
+  repositories: 19,
   languages: 6,
   categories: 4
 };

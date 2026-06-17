@@ -67,13 +67,13 @@ function HomePage() {
             Hi, I'm <span className="highlight">Matteo Shafer</span>
           </motion.h1>
           
-          <motion.p 
+          <motion.p
             className="hero-subtitle"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5, duration: 0.6 }}
           >
-            Data Analyst & Solutions Specialist
+            Quantitative Analyst & Machine Learning Engineer
           </motion.p>
 
           <motion.p 
