@@ -412,15 +412,14 @@
 
 /* Headshot */
 .hero-headshot {
-  width: 140px;
-  height: 140px;
+  width: 220px;
+  height: 220px;
   border-radius: 50%;
   object-fit: cover;
-  object-position: center top;
+  object-position: center 15%;
   border: 3px solid rgba(99, 179, 237, 0.4);
-  box-shadow: 0 0 30px rgba(99, 179, 237, 0.2);
+  box-shadow: 0 0 40px rgba(99, 179, 237, 0.25);
   margin-bottom: 1.5rem;
-  image-rendering: auto;
 }
 
 /* Reviews Section */
