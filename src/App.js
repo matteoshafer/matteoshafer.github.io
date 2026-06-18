@@ -42,7 +42,7 @@ function Header() {
     >
       <div className="header-container">
         <Link to="/" className="logo">
-          <img src="/headshot.jpg" alt="Matteo Shafer" className="logo-avatar" />
+          <img src="/headshot.png" alt="Matteo Shafer" className="logo-avatar" />
           <span className="logo-name">Matteo Shafer</span>
         </Link>
 

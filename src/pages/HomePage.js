@@ -49,7 +49,7 @@ function HomePage() {
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <motion.img
-            src="/headshot.jpg"
+            src="/headshot.png"
             alt="Matteo Shafer"
             className="hero-headshot"
             initial={{ opacity: 0, scale: 0.8 }}
