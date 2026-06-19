@@ -334,6 +334,64 @@
   border-color: #63b3ed;
 }
 
+/* Athletics Section */
+.athletics-section {
+  padding: 6rem 2rem;
+  background: #161b22;
+}
+
+.athletics-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.athletics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.25rem;
+  margin-top: 3rem;
+  text-align: left;
+}
+
+.athletic-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem 1.5rem;
+  background: rgba(22, 27, 34, 0.9);
+  border-radius: 12px;
+  border: 1px solid rgba(99, 179, 237, 0.12);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.athletic-card:hover {
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+}
+
+.athletic-card.podium { border-left: 3px solid #b7791f; }
+.athletic-card.champion { border-left: 3px solid #4fd1c5; }
+.athletic-card.finish { border-left: 3px solid #63b3ed; }
+.athletic-card.stats { border-left: 3px solid #68d391; }
+
+.athletic-icon {
+  font-size: 1.75rem;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.athletic-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #f7fafc;
+  margin-bottom: 0.25rem;
+}
+
+.athletic-detail {
+  font-size: 0.8rem;
+  color: #718096;
+}
+
 /* Contact Section */
 .contact-section {
   padding: 6rem 2rem;

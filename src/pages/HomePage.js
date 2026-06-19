@@ -212,8 +212,8 @@ function HomePage() {
             software engineering frameworks.
           </p>
           <p className="about-text">
-            My work spans from award-winning financial market research to building automated trading systems 
-            and implementing deep learning solutions for complex real-world problems.
+            My work spans from building automated trading systems to implementing deep learning solutions
+            for complex real-world problems, with a focus on quantitative strategy and data-driven decision making.
           </p>
           <div className="skills-container">
             <span className="skill-tag">Python</span>
@@ -229,6 +229,48 @@ function HomePage() {
         </motion.div>
       </section>
 
+      {/* Athletics Section */}
+      <section id="athletics" className="athletics-section">
+        <motion.div
+          className="athletics-content"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <h2 className="section-title">Athletic Achievements</h2>
+          <p className="section-subtitle">Competing at the highest amateur levels across endurance sports and tennis</p>
+          <div className="athletics-grid">
+            {[
+              { icon: "🥉", title: "50-Mile Ultra Marathon", detail: "3rd Place — Age Group", badge: "podium" },
+              { icon: "🥉", title: "Spartan Ultra 50km", detail: "3rd Place", badge: "podium" },
+              { icon: "🥉", title: "Golden Gate Trail Run Marathon", detail: "3rd Place", badge: "podium" },
+              { icon: "🏆", title: "Tennis", detail: "High School State Champion", badge: "champion" },
+              { icon: "🔱", title: "Ironman Texas", detail: "Full Ironman Finisher", badge: "finish" },
+              { icon: "🔱", title: "Ironman 70.3 Indian Wells", detail: "Half Ironman Finisher", badge: "finish" },
+              { icon: "⚡", title: "Ultra Marathons", detail: "2 Finishes (50km+)", badge: "stats" },
+              { icon: "🏅", title: "Marathons", detail: "4 Finishes", badge: "stats" },
+            ].map((item, i) => (
+              <motion.div
+                key={i}
+                className={`athletic-card ${item.badge}`}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: i * 0.08 }}
+                whileHover={{ y: -4 }}
+              >
+                <div className="athletic-icon">{item.icon}</div>
+                <div className="athletic-info">
+                  <div className="athletic-title">{item.title}</div>
+                  <div className="athletic-detail">{item.detail}</div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+      </section>
+
       {/* Reviews Section */}
       <section id="reviews" className="reviews-section">
         <motion.div
@@ -239,7 +281,7 @@ function HomePage() {
           transition={{ duration: 0.6 }}
         >
           <h2 className="section-title">Tutoring &amp; Coaching Reviews</h2>
-          <p className="section-subtitle">What students and families are saying — via Nextdoor</p>
+          <p className="section-subtitle">What students and families are saying</p>
           <div className="reviews-grid">
             {[
               {
