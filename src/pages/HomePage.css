@@ -577,3 +577,88 @@
   display: flex;
   gap: 0.2rem;
 }
+
+/* Review Submit Form */
+.review-submit-form {
+  margin-top: 2.5rem;
+  max-width: 520px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.review-submit-label {
+  color: #718096;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin: 0 0 0.2rem;
+}
+
+.review-submit-row {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.review-input {
+  background: rgba(20, 30, 48, 0.6);
+  border: 1px solid rgba(99, 179, 237, 0.15);
+  border-radius: 8px;
+  color: #e2e8f0;
+  font-size: 0.85rem;
+  padding: 0.5rem 0.75rem;
+  width: 100%;
+  outline: none;
+  transition: border-color 0.2s;
+  font-family: inherit;
+  resize: none;
+}
+
+.review-input::placeholder {
+  color: #4a5568;
+}
+
+.review-input:focus {
+  border-color: rgba(99, 179, 237, 0.4);
+}
+
+.review-textarea {
+  min-height: 72px;
+}
+
+.review-submit-btn {
+  align-self: flex-end;
+  background: linear-gradient(135deg, #63b3ed, #4fd1c5);
+  border: none;
+  border-radius: 8px;
+  color: #0d1117;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.5rem 1.2rem;
+  transition: opacity 0.2s;
+}
+
+.review-submit-btn:hover {
+  opacity: 0.85;
+}
+
+.review-submit-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.review-submit-feedback {
+  font-size: 0.8rem;
+  margin: 0;
+}
+
+.review-submit-feedback.success {
+  color: #4fd1c5;
+}
+
+.review-submit-feedback.error {
+  color: #fc8181;
+}

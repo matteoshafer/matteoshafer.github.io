@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useForm, ValidationError } from "@formspree/react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaGithub, FaCode, FaLayerGroup, FaChartLine } from "react-icons/fa";
 import ProjectCard from "../components/ProjectCard";
@@ -8,6 +9,7 @@ import "./HomePage.css";
 function HomePage() {
   const [activeFilter, setActiveFilter] = useState("all");
   const [filteredProjects, setFilteredProjects] = useState(projects);
+  const [reviewState, handleReviewSubmit] = useForm("mbdvykrj");
   const [typedText, setTypedText] = useState("");
   const fullText = "Building intelligent systems at the intersection of AI, finance, and data.";
 
@@ -323,6 +325,39 @@ function HomePage() {
               </motion.div>
             ))}
           </div>
+
+          <motion.form
+            className="review-submit-form"
+            onSubmit={handleReviewSubmit}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+          >
+            {reviewState.succeeded ? (
+              <p className="review-submit-feedback success">Thanks! Your review has been submitted.</p>
+            ) : (
+              <>
+                <p className="review-submit-label">Leave a Review</p>
+                <div className="review-submit-row">
+                  <input className="review-input" type="text" name="name" placeholder="Your name" required />
+                  <ValidationError field="name" errors={reviewState.errors} className="review-submit-feedback error" />
+                  <input className="review-input" type="text" name="location" placeholder="Location (optional)" />
+                </div>
+                <textarea
+                  className="review-input review-textarea"
+                  name="message"
+                  placeholder="Share your experience..."
+                  required
+                  rows={3}
+                />
+                <ValidationError field="message" errors={reviewState.errors} className="review-submit-feedback error" />
+                <button className="review-submit-btn" type="submit" disabled={reviewState.submitting}>
+                  {reviewState.submitting ? "Sending..." : "Submit Review"}
+                </button>
+              </>
+            )}
+          </motion.form>
         </motion.div>
       </section>
 
