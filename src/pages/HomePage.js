@@ -300,6 +300,11 @@ function HomePage() {
                 name: "Lisa Taylor",
                 location: "North Clairemont Drive",
                 text: "We are on our third session with Matteo and very happy! My son finds him \"very chill\" and easy to work with. This says a lot coming from a 14 year old. After his first session my son got a B on his make up exam. Looking forward to seeing more results! He has the patience and knowledge to take the time to explain the work until my son can understand. We highly recommend."
+              },
+              {
+                name: "Stephanie Gonda",
+                location: "Del Mar",
+                text: "Matteo has been an awesome coach for my son! He's patient, encouraging, and knows how to make lessons fun while still helping the kids improve. My son always looks forward to practice, and we've seen so much growth in his confidence and skills. Highly recommend! He is a very well rounded guy!"
               }
             ].map((review, i) => (
               <motion.div
