@@ -463,9 +463,7 @@
     font-size: 2rem;
   }
 
-  .reviews-grid {
-    grid-template-columns: 1fr;
-  }
+
 }
 
 /* Headshot */
@@ -490,12 +488,66 @@
   text-align: center;
 }
 
-.reviews-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 1.5rem;
+.reviews-carousel {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
   margin-top: 3rem;
-  text-align: left;
+}
+
+.carousel-track {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+  min-height: 220px;
+  display: flex;
+  align-items: center;
+}
+
+.carousel-btn {
+  background: rgba(22, 27, 34, 0.8);
+  border: 1px solid rgba(99, 179, 237, 0.25);
+  border-radius: 50%;
+  color: #63b3ed;
+  cursor: pointer;
+  font-size: 2rem;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+  line-height: 1;
+}
+
+.carousel-btn:hover {
+  background: rgba(99, 179, 237, 0.15);
+  border-color: #63b3ed;
+}
+
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1.25rem;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(99, 179, 237, 0.25);
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.2s ease;
+}
+
+.dot.active {
+  background: #63b3ed;
+  width: 24px;
+  border-radius: 4px;
 }
 
 .review-card {
@@ -504,12 +556,13 @@
   border-radius: 16px;
   overflow: hidden;
   position: relative;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  cursor: grab;
+  user-select: none;
 }
 
-.review-card:hover {
-  border-color: rgba(99, 179, 237, 0.4);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+.review-card:active {
+  cursor: grabbing;
 }
 
 .review-card .card-glow {

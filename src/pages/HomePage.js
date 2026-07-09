@@ -11,6 +11,42 @@ function HomePage() {
   const [filteredProjects, setFilteredProjects] = useState(projects);
   const [reviewState, handleReviewSubmit] = useForm("mbdvykrj");
   const [typedText, setTypedText] = useState("");
+  const [currentReview, setCurrentReview] = useState(0);
+  const [slideDirection, setSlideDirection] = useState(0);
+
+  const reviews = [
+    {
+      name: "Esther A.",
+      location: "La Jolla Heights",
+      text: "Matteo is a wonderful tutor. Extremely helpful and really skilled at explaining high school math. I highly recommend hiring Matteo."
+    },
+    {
+      name: "Elizabeth L.",
+      location: "Carmel Valley Circle",
+      text: "Matteo helped my daughter go from a state of anxiety to excelling in the midterm exam of her college statistics class. He is patient and very helpful. I strongly recommend him if your child needs help."
+    },
+    {
+      name: "Lisa Taylor",
+      location: "North Clairemont Drive",
+      text: "We are on our third session with Matteo and very happy! My son finds him \"very chill\" and easy to work with. This says a lot coming from a 14 year old. After his first session my son got a B on his make up exam. Looking forward to seeing more results! He has the patience and knowledge to take the time to explain the work until my son can understand. We highly recommend."
+    },
+    {
+      name: "Stephanie Gonda",
+      location: "Del Mar",
+      text: "Matteo has been an awesome coach for my son! He's patient, encouraging, and knows how to make lessons fun while still helping the kids improve. My son always looks forward to practice, and we've seen so much growth in his confidence and skills. Highly recommend! He is a very well rounded guy!"
+    }
+  ];
+
+  const slideVariants = {
+    enter: (dir) => ({ x: dir > 0 ? 350 : -350, opacity: 0 }),
+    center: { x: 0, opacity: 1 },
+    exit: (dir) => ({ x: dir > 0 ? -350 : 350, opacity: 0 }),
+  };
+
+  const paginate = (dir) => {
+    setSlideDirection(dir);
+    setCurrentReview((prev) => (prev + dir + reviews.length) % reviews.length);
+  };
   const fullText = "Building intelligent systems at the intersection of AI, finance, and data.";
 
   useEffect(() => {
@@ -244,7 +280,7 @@ function HomePage() {
           <p className="section-subtitle">Competing at the highest amateur levels across endurance sports and tennis</p>
           <div className="athletics-grid">
             {[
-              { icon: "🥉", title: "50-Mile Ultra Marathon", detail: "3rd Place — Age Group", badge: "podium" },
+              { icon: "🔱", title: "50-Mile Ultra Marathon", detail: "Finisher", badge: "finish" },
               { icon: "🥉", title: "Spartan Ultra 50km", detail: "3rd Place", badge: "podium" },
               { icon: "🥉", title: "Golden Gate Trail Run Marathon", detail: "3rd Place", badge: "podium" },
               { icon: "🏆", title: "Tennis", detail: "High School State Champion", badge: "champion" },
@@ -284,50 +320,52 @@ function HomePage() {
         >
           <h2 className="section-title">Tutoring &amp; Coaching Reviews</h2>
           <p className="section-subtitle">What students and families are saying</p>
-          <div className="reviews-grid">
-            {[
-              {
-                name: "Esther A.",
-                location: "La Jolla Heights",
-                text: "Matteo is a wonderful tutor. Extremely helpful and really skilled at explaining high school math. I highly recommend hiring Matteo."
-              },
-              {
-                name: "Elizabeth L.",
-                location: "Carmel Valley Circle",
-                text: "Matteo helped my daughter go from a state of anxiety to excelling in the midterm exam of her college statistics class. He is patient and very helpful. I strongly recommend him if your child needs help."
-              },
-              {
-                name: "Lisa Taylor",
-                location: "North Clairemont Drive",
-                text: "We are on our third session with Matteo and very happy! My son finds him \"very chill\" and easy to work with. This says a lot coming from a 14 year old. After his first session my son got a B on his make up exam. Looking forward to seeing more results! He has the patience and knowledge to take the time to explain the work until my son can understand. We highly recommend."
-              },
-              {
-                name: "Stephanie Gonda",
-                location: "Del Mar",
-                text: "Matteo has been an awesome coach for my son! He's patient, encouraging, and knows how to make lessons fun while still helping the kids improve. My son always looks forward to practice, and we've seen so much growth in his confidence and skills. Highly recommend! He is a very well rounded guy!"
-              }
-            ].map((review, i) => (
-              <motion.div
-                key={i}
-                className="review-card"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: i * 0.1 }}
-              >
-                <div className="card-glow" />
-                <div className="review-card-content">
-                  <div className="review-header">
-                    <div className="review-avatar">{review.name[0]}</div>
-                    <div>
-                      <div className="review-name">{review.name}</div>
-                      <div className="review-location">{review.location}</div>
+          <div className="reviews-carousel">
+            <button className="carousel-btn carousel-prev" onClick={() => paginate(-1)} aria-label="Previous review">&#8249;</button>
+            <div className="carousel-track">
+              <AnimatePresence custom={slideDirection} mode="wait">
+                <motion.div
+                  key={currentReview}
+                  custom={slideDirection}
+                  variants={slideVariants}
+                  initial="enter"
+                  animate="center"
+                  exit="exit"
+                  transition={{ duration: 0.35, ease: "easeInOut" }}
+                  drag="x"
+                  dragConstraints={{ left: 0, right: 0 }}
+                  dragElastic={0.1}
+                  onDragEnd={(_, { offset }) => {
+                    if (offset.x < -60) paginate(1);
+                    else if (offset.x > 60) paginate(-1);
+                  }}
+                  className="review-card"
+                >
+                  <div className="card-glow" />
+                  <div className="review-card-content">
+                    <div className="review-header">
+                      <div className="review-avatar">{reviews[currentReview].name[0]}</div>
+                      <div>
+                        <div className="review-name">{reviews[currentReview].name}</div>
+                        <div className="review-location">{reviews[currentReview].location}</div>
+                      </div>
                     </div>
+                    <p className="review-text">{reviews[currentReview].text}</p>
+                    <div className="review-stars">{"★★★★★"}</div>
                   </div>
-                  <p className="review-text">{review.text}</p>
-                  <div className="review-stars">{"★★★★★"}</div>
-                </div>
-              </motion.div>
+                </motion.div>
+              </AnimatePresence>
+            </div>
+            <button className="carousel-btn carousel-next" onClick={() => paginate(1)} aria-label="Next review">&#8250;</button>
+          </div>
+          <div className="carousel-dots">
+            {reviews.map((_, i) => (
+              <button
+                key={i}
+                className={`dot ${i === currentReview ? "active" : ""}`}
+                onClick={() => { setSlideDirection(i > currentReview ? 1 : -1); setCurrentReview(i); }}
+                aria-label={`Review ${i + 1}`}
+              />
             ))}
           </div>
 
