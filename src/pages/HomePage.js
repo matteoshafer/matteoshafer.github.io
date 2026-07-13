@@ -39,6 +39,11 @@ function HomePage() {
       name: "Arson O.",
       location: "Cal Poly SLO",
       text: "Matteo was a great tutor for my second devision stat class. Such a positive guy that was a wealth of information. I recommend him to anyone at the collegiate academic level."
+    },
+    {
+      name: "Jade",
+      location: "Cal Poly SLO",
+      text: "Matteo was an excellent tutor. Not only is he very knowledgeable and intelligent in math but he teaches the subjects in an understandable way. He works hard to break down barriers of confusion and articulates larger concepts into building block ideas. His ability to grow confidence in difficult subjects helped me feel more strongly about my work and led me to getting a 4 on my AP Calculus exam."
     }
   ];
 
