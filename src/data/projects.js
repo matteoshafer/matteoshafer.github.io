@@ -190,7 +190,7 @@ export const categories = [
 ];
 
 export const stats = {
-  repositories: 19,
+  repositories: 37,
   languages: 6,
   categories: 4
 };
