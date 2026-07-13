@@ -13,6 +13,14 @@ function HomePage() {
   const [typedText, setTypedText] = useState("");
   const [currentReview, setCurrentReview] = useState(0);
   const [slideDirection, setSlideDirection] = useState(0);
+  const [repoCount, setRepoCount] = useState(stats.repositories);
+
+  useEffect(() => {
+    fetch("https://api.github.com/users/matteoshafer")
+      .then(r => r.json())
+      .then(data => { if (data.public_repos) setRepoCount(data.public_repos); })
+      .catch(() => {});
+  }, []);
 
   const reviews = [
     {
@@ -175,7 +183,7 @@ function HomePage() {
         <div className="stats-grid">
           <div className="stat-card">
             <FaCode className="stat-icon" />
-            <span className="stat-number">{stats.repositories}</span>
+            <span className="stat-number">{repoCount}</span>
             <span className="stat-label">Repositories</span>
           </div>
           <div className="stat-card">
