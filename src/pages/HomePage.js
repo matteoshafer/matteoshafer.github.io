@@ -34,6 +34,11 @@ function HomePage() {
       name: "Stephanie Gonda",
       location: "Del Mar",
       text: "Matteo has been an awesome coach for my son! He's patient, encouraging, and knows how to make lessons fun while still helping the kids improve. My son always looks forward to practice, and we've seen so much growth in his confidence and skills. Highly recommend! He is a very well rounded guy!"
+    },
+    {
+      name: "Arson O.",
+      location: "Cal Poly SLO",
+      text: "Matteo was a great tutor for my second devision stat class. Such a positive guy that was a wealth of information. I recommend him to anyone at the collegiate academic level."
     }
   ];
 
