@@ -202,7 +202,7 @@ function HomePage() {
           <div className="stat-card">
             <FaChartLine className="stat-icon" />
             <span className="stat-number">{stats.categories}</span>
-            <span className="stat-label">Specializations</span>
+            <span className="stat-label">Focus Areas</span>
           </div>
         </div>
       </motion.section>

@@ -272,7 +272,7 @@ export const projects = [
 export const categories = [
   { id: "all", name: "All Projects" },
   { id: "ai-ml", name: "AI & Machine Learning" },
-  { id: "trading", name: "Trading Systems" },
+  { id: "trading", name: "Quantitative Finance" },
   { id: "data-science", name: "Data Science" },
   { id: "software-dev", name: "Software Development" }
 ];
