@@ -279,6 +279,5 @@ export const categories = [
 
 export const stats = {
   repositories: 37,
-  languages: 8,
   categories: 4
 };

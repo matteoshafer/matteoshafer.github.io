@@ -16,6 +16,7 @@ function HomePage() {
   const [repoCount, setRepoCount] = useState(stats.repositories);
   const [showAllProjects, setShowAllProjects] = useState(false);
   const PROJECTS_INITIAL_COUNT = 6;
+  const languageCount = new Set(projects.map(p => p.language)).size;
 
   useEffect(() => {
     fetch("https://api.github.com/users/matteoshafer")
@@ -196,7 +197,7 @@ function HomePage() {
           </div>
           <div className="stat-card">
             <FaLayerGroup className="stat-icon" />
-            <span className="stat-number">{stats.languages}</span>
+            <span className="stat-number">{languageCount}</span>
             <span className="stat-label">Languages</span>
           </div>
           <div className="stat-card">
