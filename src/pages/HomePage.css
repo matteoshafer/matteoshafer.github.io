@@ -58,7 +58,7 @@
 .grid-overlay {
   position: absolute;
   inset: 0;
-  background-image: 
+  background-image:
     linear-gradient(rgba(99, 179, 237, 0.03) 1px, transparent 1px),
     linear-gradient(90deg, rgba(99, 179, 237, 0.03) 1px, transparent 1px);
   background-size: 60px 60px;
@@ -292,6 +292,28 @@
   gap: 1.5rem;
 }
 
+.view-more-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.view-more-btn {
+  padding: 0.75rem 2rem;
+  background: rgba(22, 27, 34, 0.8);
+  border: 1px solid rgba(99, 179, 237, 0.3);
+  border-radius: 8px;
+  color: #a0aec0;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.view-more-btn:hover {
+  border-color: #63b3ed;
+  color: #63b3ed;
+}
+
 /* About Section */
 .about-section {
   padding: 6rem 2rem;
@@ -415,6 +437,7 @@
   display: flex;
   justify-content: center;
   gap: 1rem;
+  flex-wrap: wrap;
 }
 
 .contact-link {
@@ -439,63 +462,20 @@
 
 /* Responsive */
 @media (max-width: 768px) {
-  /* Hero */
-  .hero {
-    padding: 1.5rem 1rem;
-    min-height: auto;
-    padding-top: 4rem;
-    padding-bottom: 3rem;
-  }
-
-  .hero-headshot {
-    width: 160px;
-    height: 160px;
-  }
-
   .hero-title {
-    font-size: 2rem;
+    font-size: 2.25rem;
   }
 
   .hero-subtitle {
-    font-size: 1.1rem;
-  }
-
-  .hero-tagline {
-    font-size: 0.95rem;
-    padding: 0 0.5rem;
-  }
-
-  .cta-primary, .cta-secondary {
-    padding: 0.75rem 1.25rem;
-    font-size: 0.9rem;
-  }
-
-  /* Stats */
-  .stats-section {
-    padding: 2.5rem 1rem;
+    font-size: 1.25rem;
   }
 
   .stats-grid {
-    gap: 0.75rem;
+    gap: 1.5rem;
   }
 
   .stat-card {
-    padding: 1rem 1.25rem;
-    flex: 1 1 calc(33% - 0.75rem);
-    min-width: 80px;
-  }
-
-  .stat-number {
-    font-size: 1.75rem;
-  }
-
-  .stat-label {
-    font-size: 0.7rem;
-  }
-
-  /* Projects */
-  .projects-section {
-    padding: 3rem 1rem;
+    padding: 1.25rem 2rem;
   }
 
   .projects-grid {
@@ -503,77 +483,7 @@
   }
 
   .section-title {
-    font-size: 1.75rem;
-  }
-
-  .section-subtitle {
-    font-size: 0.975rem;
-  }
-
-  .filter-btn {
-    padding: 0.5rem 0.875rem;
-    font-size: 0.8rem;
-  }
-
-  /* About */
-  .about-section {
-    padding: 3rem 1rem;
-  }
-
-  .about-text {
-    font-size: 1rem;
-  }
-
-  /* Athletics */
-  .athletics-section {
-    padding: 3rem 1rem;
-  }
-
-  .athletics-grid {
-    grid-template-columns: 1fr;
-  }
-
-  /* Reviews */
-  .reviews-section {
-    padding: 3rem 1rem;
-  }
-
-  .reviews-carousel {
-    gap: 0.5rem;
-  }
-
-  .carousel-btn {
-    width: 36px;
-    height: 36px;
-    font-size: 1.4rem;
-  }
-
-  .review-card-content {
-    padding: 1.25rem 1rem;
-  }
-
-  .review-text {
-    font-size: 0.85rem;
-  }
-
-  .review-submit-row {
-    flex-direction: column;
-  }
-
-  /* Contact */
-  .contact-section {
-    padding: 3rem 1rem;
-  }
-
-  .contact-links {
-    flex-wrap: wrap;
-    gap: 0.75rem;
-  }
-
-  .contact-link {
-    flex: 1 1 auto;
-    justify-content: center;
-    min-width: 140px;
+    font-size: 2rem;
   }
 }
 

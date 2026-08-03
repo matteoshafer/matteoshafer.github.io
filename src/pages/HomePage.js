@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useForm, ValidationError } from "@formspree/react";
 import { motion, AnimatePresence } from "framer-motion";
-import { FaGithub, FaCode, FaLayerGroup, FaChartLine } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaEnvelope, FaCode, FaLayerGroup, FaChartLine } from "react-icons/fa";
 import ProjectCard from "../components/ProjectCard";
 import { projects, categories, stats } from "../data/projects";
 import "./HomePage.css";
@@ -14,6 +14,8 @@ function HomePage() {
   const [currentReview, setCurrentReview] = useState(0);
   const [slideDirection, setSlideDirection] = useState(0);
   const [repoCount, setRepoCount] = useState(stats.repositories);
+  const [showAllProjects, setShowAllProjects] = useState(false);
+  const PROJECTS_INITIAL_COUNT = 6;
 
   useEffect(() => {
     fetch("https://api.github.com/users/matteoshafer")
@@ -52,6 +54,11 @@ function HomePage() {
       name: "Jade",
       location: "Cal Poly SLO",
       text: "Matteo was an excellent tutor. Not only is he very knowledgeable and intelligent in math but he teaches the subjects in an understandable way. He works hard to break down barriers of confusion and articulates larger concepts into building block ideas. His ability to grow confidence in difficult subjects helped me feel more strongly about my work and led me to getting a 4 on my AP Calculus exam."
+    },
+    {
+      name: "Carmelo Maggio",
+      location: "Cal Poly SLO",
+      text: "Matteo absolutely saved me in my statistics class. Because of several bad experiences, I had always been skeptical of online tutoring. However, I connected with Matteo out of desperation after being unable to find an in-person tutor, and he completely changed my perspective on what online tutoring can be. He consistently held me accountable for attending our sessions and made sure I truly understood each concept. Even when I tried to move on without fully understanding something, he recognized it and took the time to explain the problem in as many different ways as necessary until it finally clicked. I also really appreciated his honesty. Whenever he was unsure about a topic because he had not worked with it recently, he took the time to research it and make sure he fully understood it before explaining it to me, rather than giving me an answer he was not confident about. Matteo is patient, persistent, knowledgeable, and genuinely invested in his students' success. I would 100% work with him again and highly recommend him to anyone looking for a tutor or as a professional in any field. Thank you Matteo!!"
     }
   ];
 
@@ -86,6 +93,7 @@ function HomePage() {
     } else {
       setFilteredProjects(projects.filter(p => p.category === activeFilter));
     }
+    setShowAllProjects(false);
   }, [activeFilter]);
 
   return (
@@ -97,8 +105,8 @@ function HomePage() {
           <div className="gradient-orb orb-2" />
           <div className="grid-overlay" />
         </div>
-        
-        <motion.div 
+
+        <motion.div
           className="hero-content"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -123,7 +131,7 @@ function HomePage() {
             Available for opportunities
           </motion.div>
 
-          <motion.h1 
+          <motion.h1
             className="hero-title"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -131,7 +139,7 @@ function HomePage() {
           >
             Hi, I'm <span className="highlight">Matteo Shafer</span>
           </motion.h1>
-          
+
           <motion.p
             className="hero-subtitle"
             initial={{ opacity: 0 }}
@@ -141,7 +149,7 @@ function HomePage() {
             Quantitative Analyst & Machine Learning Engineer
           </motion.p>
 
-          <motion.p 
+          <motion.p
             className="hero-tagline"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -151,15 +159,15 @@ function HomePage() {
             <span className="cursor">|</span>
           </motion.p>
 
-          <motion.div 
+          <motion.div
             className="hero-cta"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.9, duration: 0.6 }}
           >
-            <a 
-              href="https://github.com/matteoshafer" 
-              target="_blank" 
+            <a
+              href="https://github.com/matteoshafer"
+              target="_blank"
               rel="noopener noreferrer"
               className="cta-primary"
             >
@@ -173,7 +181,7 @@ function HomePage() {
       </section>
 
       {/* Stats Section */}
-      <motion.section 
+      <motion.section
         className="stats-section"
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -201,7 +209,7 @@ function HomePage() {
 
       {/* Projects Section */}
       <section id="projects" className="projects-section">
-        <motion.div 
+        <motion.div
           className="section-header"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -215,7 +223,7 @@ function HomePage() {
         </motion.div>
 
         {/* Filter Buttons */}
-        <motion.div 
+        <motion.div
           className="filter-container"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -236,25 +244,37 @@ function HomePage() {
         </motion.div>
 
         {/* Projects Grid */}
-        <motion.div 
+        <motion.div
           className="projects-grid"
           layout
         >
           <AnimatePresence mode="popLayout">
-            {filteredProjects.map((project, index) => (
-              <ProjectCard 
-                key={project.id} 
-                project={project} 
+            {(showAllProjects ? filteredProjects : filteredProjects.slice(0, PROJECTS_INITIAL_COUNT)).map((project, index) => (
+              <ProjectCard
+                key={project.id}
+                project={project}
                 index={index}
               />
             ))}
           </AnimatePresence>
         </motion.div>
+        {filteredProjects.length > PROJECTS_INITIAL_COUNT && (
+          <div className="view-more-container">
+            <motion.button
+              className="view-more-btn"
+              onClick={() => setShowAllProjects(prev => !prev)}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              {showAllProjects ? "View Less" : `View More (${filteredProjects.length - PROJECTS_INITIAL_COUNT} more)`}
+            </motion.button>
+          </div>
+        )}
       </section>
 
       {/* About Section */}
       <section id="about" className="about-section">
-        <motion.div 
+        <motion.div
           className="about-content"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -263,8 +283,8 @@ function HomePage() {
         >
           <h2 className="section-title">About Me</h2>
           <p className="about-text">
-            I'm passionate about exploring the intersection of data science, economics, and blockchain technology. 
-            I continually expand my expertise in machine learning, stochastic modeling, econometrics, and modern 
+            I'm passionate about exploring the intersection of data science, economics, and blockchain technology.
+            I continually expand my expertise in machine learning, stochastic modeling, econometrics, and modern
             software engineering frameworks.
           </p>
           <p className="about-text">
@@ -424,7 +444,7 @@ function HomePage() {
 
       {/* Contact Section */}
       <section id="contact" className="contact-section">
-        <motion.div 
+        <motion.div
           className="contact-content"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -433,17 +453,31 @@ function HomePage() {
         >
           <h2 className="section-title">Let's Connect</h2>
           <p className="contact-text">
-            I'm always eager to connect with others interested in quantitative strategy, 
+            I'm always eager to connect with others interested in quantitative strategy,
             blockchain technologies, or AI/ML/DL. Feel free to reach out!
           </p>
           <div className="contact-links">
-            <a 
-              href="https://github.com/matteoshafer" 
-              target="_blank" 
+            <a
+              href="https://github.com/matteoshafer"
+              target="_blank"
               rel="noopener noreferrer"
               className="contact-link"
             >
               <FaGithub /> GitHub
+            </a>
+            <a
+              href="https://www.linkedin.com/in/matteo-shafer-102105197/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="contact-link"
+            >
+              <FaLinkedin /> LinkedIn
+            </a>
+            <a
+              href="mailto:matteoshafer@gmail.com"
+              className="contact-link"
+            >
+              <FaEnvelope /> Gmail
             </a>
           </div>
         </motion.div>
