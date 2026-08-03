@@ -302,6 +302,14 @@ function HomePage() {
             <span className="skill-tag">Blockchain</span>
             <span className="skill-tag">Data Visualization</span>
           </div>
+          <div className="languages-container">
+            <span className="languages-label">Spoken Languages</span>
+            <div className="language-tags">
+              <span className="language-tag">🇺🇸 English</span>
+              <span className="language-tag">🇮🇹 Italian</span>
+              <span className="language-tag">🇪🇸 Spanish</span>
+            </div>
+          </div>
         </motion.div>
       </section>
 

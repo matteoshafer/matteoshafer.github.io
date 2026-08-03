@@ -356,6 +356,35 @@
   border-color: #63b3ed;
 }
 
+.languages-container {
+  margin-top: 1.75rem;
+}
+
+.languages-label {
+  display: block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #4a5568;
+  margin-bottom: 0.75rem;
+}
+
+.language-tags {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.language-tag {
+  padding: 0.4rem 0.9rem;
+  background: rgba(79, 209, 197, 0.07);
+  border: 1px solid rgba(79, 209, 197, 0.2);
+  border-radius: 6px;
+  font-size: 0.85rem;
+  color: #4fd1c5;
+}
+
 /* Athletics Section */
 .athletics-section {
   padding: 6rem 2rem;
