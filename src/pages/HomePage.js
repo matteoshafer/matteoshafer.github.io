@@ -57,6 +57,11 @@ function HomePage() {
       text: "Matteo was an excellent tutor. Not only is he very knowledgeable and intelligent in math but he teaches the subjects in an understandable way. He works hard to break down barriers of confusion and articulates larger concepts into building block ideas. His ability to grow confidence in difficult subjects helped me feel more strongly about my work and led me to getting a 4 on my AP Calculus exam."
     },
     {
+      name: "Ben Rosbach",
+      location: "Cal Poly SLO",
+      text: "Matteo helped me quite a bit during undergrad as a tutor for my Stats classes. He was very helpful and was able to help explain the coursework in a way that clicked for me. Definitely recommend taking advantage of his knowledge if you need help getting through those more technical classes!"
+    },
+    {
       name: "Carmelo Maggio",
       location: "Cal Poly SLO",
       text: "Matteo absolutely saved me in my statistics class. Because of several bad experiences, I had always been skeptical of online tutoring. However, I connected with Matteo out of desperation after being unable to find an in-person tutor, and he completely changed my perspective on what online tutoring can be. He consistently held me accountable for attending our sessions and made sure I truly understood each concept. Even when I tried to move on without fully understanding something, he recognized it and took the time to explain the problem in as many different ways as necessary until it finally clicked. I also really appreciated his honesty. Whenever he was unsure about a topic because he had not worked with it recently, he took the time to research it and make sure he fully understood it before explaining it to me, rather than giving me an answer he was not confident about. Matteo is patient, persistent, knowledgeable, and genuinely invested in his students' success. I would 100% work with him again and highly recommend him to anyone looking for a tutor or as a professional in any field. Thank you Matteo!!"
