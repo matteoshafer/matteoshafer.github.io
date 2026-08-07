@@ -57,6 +57,11 @@ function HomePage() {
       text: "Matteo was an excellent tutor. Not only is he very knowledgeable and intelligent in math but he teaches the subjects in an understandable way. He works hard to break down barriers of confusion and articulates larger concepts into building block ideas. His ability to grow confidence in difficult subjects helped me feel more strongly about my work and led me to getting a 4 on my AP Calculus exam."
     },
     {
+      name: "Premi S.",
+      location: "Carmel Valley",
+      text: "Matteo is an excellent math tutor. He is extremely patient and encouraging. He asks questions in a way that stimulates critical thinking which then leads to understanding. He really helped our middle schooler solidify skills on key concepts and build confidence. Thank you, Matteo!"
+    },
+    {
       name: "Ben Rosbach",
       location: "Cal Poly SLO",
       text: "Matteo helped me quite a bit during undergrad as a tutor for my Stats classes. He was very helpful and was able to help explain the coursework in a way that clicked for me. Definitely recommend taking advantage of his knowledge if you need help getting through those more technical classes!"
