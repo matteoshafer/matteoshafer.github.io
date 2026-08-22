@@ -70,6 +70,16 @@ function HomePage() {
       name: "Carmelo Maggio",
       location: "Cal Poly SLO",
       text: "Matteo absolutely saved me in my statistics class. Because of several bad experiences, I had always been skeptical of online tutoring. However, I connected with Matteo out of desperation after being unable to find an in-person tutor, and he completely changed my perspective on what online tutoring can be. He consistently held me accountable for attending our sessions and made sure I truly understood each concept. Even when I tried to move on without fully understanding something, he recognized it and took the time to explain the problem in as many different ways as necessary until it finally clicked. I also really appreciated his honesty. Whenever he was unsure about a topic because he had not worked with it recently, he took the time to research it and make sure he fully understood it before explaining it to me, rather than giving me an answer he was not confident about. Matteo is patient, persistent, knowledgeable, and genuinely invested in his students' success. I would 100% work with him again and highly recommend him to anyone looking for a tutor or as a professional in any field. Thank you Matteo!!"
+    },
+    {
+      name: "Hilda C.",
+      location: "La Jolla",
+      text: "We had a wonderful experience with Matteo this summer. Math has always been a subject our 14 year old grandson struggled with, so we were amazed to see him not only go willingly to his sessions, but come out smiling! Matteo was kind, responsible, patient, and incredibly relatable. Most importantly, he had a real gift for explaining difficult concepts in a way that made sense, without ever making our grandson feel frustrated or discouraged. He connected with him on his level and helped make math feel much more approachable. We're very grateful for the positive experience and would highly recommend him to any family looking for a patient, engaging, and effective math tutor."
+    },
+    {
+      name: "Nicci",
+      location: "Poway",
+      text: "Matteo is a great coach. He is very good about connecting and meeting my daughter where she is at. She looks forward to lessons and can see herself getting better. He is patient, responsible, and is genuinely interested in helping others by sharing his experience and knowledge. I highly recommend Matteo for any coaching or professional position."
     }
   ];
 
