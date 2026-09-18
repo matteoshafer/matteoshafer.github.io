@@ -80,6 +80,11 @@ function HomePage() {
       name: "Nicci",
       location: "Poway",
       text: "Matteo is a great coach. He is very good about connecting and meeting my daughter where she is at. She looks forward to lessons and can see herself getting better. He is patient, responsible, and is genuinely interested in helping others by sharing his experience and knowledge. I highly recommend Matteo for any coaching or professional position."
+    },
+    {
+      name: "Lindsey",
+      location: "San Diego",
+      text: "We are so grateful for Matteo! He is incredibly knowledgable, and has a gift for making my son feel both calm and confident as he approaches learning math. I don't know what we would have done without him! Highly recommend."
     }
   ];
 
