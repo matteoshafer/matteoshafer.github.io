@@ -85,6 +85,11 @@ function HomePage() {
       name: "Lindsey",
       location: "San Diego",
       text: "We are so grateful for Matteo! He is incredibly knowledgable, and has a gift for making my son feel both calm and confident as he approaches learning math. I don't know what we would have done without him! Highly recommend."
+    },
+    {
+      name: "Delly E.",
+      location: "Carmel Valley",
+      text: "Matteo is an awesome tutor and flexible with his time when it comes to accommodating preparations for upcoming exams and quizzes. He's very friendly and personable and cares to go out of his way to make sure you understand the work. I highly recommend him to anyone looking for a responsible tutor."
     }
   ];
 
