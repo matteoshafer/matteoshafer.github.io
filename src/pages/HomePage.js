@@ -90,6 +90,11 @@ function HomePage() {
       name: "Delly E.",
       location: "Carmel Valley",
       text: "Matteo is an awesome tutor and flexible with his time when it comes to accommodating preparations for upcoming exams and quizzes. He's very friendly and personable and cares to go out of his way to make sure you understand the work. I highly recommend him to anyone looking for a responsible tutor."
+    },
+    {
+      name: "Kai L.",
+      location: "Carmel Valley",
+      text: "Matteo tutors high school math to my son. He is patient, explains well, and knows how to diagnose and help where the student is struggling."
     }
   ];
 
